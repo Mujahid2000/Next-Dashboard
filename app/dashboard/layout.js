@@ -76,7 +76,7 @@ const Page = ({ children }) => {
 
           
           <button
-            className="text-white lg:hidden focus:outline-none"
+            className="text-white 2xl:hidden focus:outline-none"
             ref={toggleButtonRef}
             onClick={toggleSidebar}
           >
@@ -93,7 +93,7 @@ const Page = ({ children }) => {
           ref={sidebarRef}
             className={`z-40 flex flex-col justify-between md:w-64 w-64 fixed h-full transform transition-transform duration-300 ease-in-out bg-[#2E2E48] shadow-lg ${
               openMenu ? 'translate-x-0' : '-translate-x-full'
-            } lg:translate-x-0`}
+            } 2xl:translate-x-0`}
           >
             <div className="flex flex-col h-full">
              
@@ -122,7 +122,8 @@ const Page = ({ children }) => {
             </div>
           </aside>
 
-          <div className="flex-1 bg-[#383854] p-4 md:p-6 max-w-7xl mx-auto">
+          {/* Main content */}
+          <div className="flex-1 bg-[#383854] p-4 md:p-6 max-w-6xl 2xl:max-w-7xl mx-auto">
             {children}
           </div>
         </div>
