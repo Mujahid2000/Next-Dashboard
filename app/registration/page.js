@@ -51,7 +51,7 @@ const Page = () => {
       user_metadata: {name:name},
       password,
       options: {
-      emailRedirectTo: 'http://localhost:3000/dashboard/overview',
+      emailRedirectTo: 'https://next-dashboard-sepia-chi.vercel.app/dashboard/overview',
       },
     });
 

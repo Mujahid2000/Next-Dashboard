@@ -142,7 +142,9 @@ const Page = () => {
         </div>
 
         {/* Pie Chart */}
-        <div className="shadow-lg p-4 rounded-lg">
+        {
+          orders.length > 0 ? 
+          (<div className="shadow-lg p-4 rounded-lg">
           <h2 className="text-lg font-semibold mb-4">Monthly Orders (Pie Chart)</h2>
           <ResponsiveContainer width="100%" height={300}>
             <PieChart>
@@ -154,7 +156,12 @@ const Page = () => {
               <Tooltip />
             </PieChart>
           </ResponsiveContainer>
-        </div>
+        </div>):
+        (
+        <h2 className='text-lg font-semibold py-4'>No Order Available</h2>          
+        )
+        }
+        
       </div>
 
       <h1 className="text-2xl font-bold mb-4 text-white py-6 text-center">Order List</h1>
