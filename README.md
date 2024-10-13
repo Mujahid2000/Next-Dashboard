@@ -51,4 +51,4 @@ API Documentation:
 
 Problems I faced and how I solved them.
 
-Before complete this task I didn't know the supabase. It's a very challenging task for me with use a new technology. But I successfully complete the task. When I work on signUp section I faced some issue for signUp with email.when I try to singUp I see a error in console. after some hours I explore the supabase email authentication. I caught the problem. The problem is when i did not enable email authentication properly. Then I enable the email authentication on right way and then I success to signUp.
+Before complete this task I didn't know the supabase. It's a very challenging task for me with use a new technology. But I successfully complete the task. When I work on signUp section I faced some issue for signUp with email.when I try to singUp I see a error in console. after some hours I explore the supabase email authentication. I found the problem. The problem is I did not enable email authentication properly. Then I enable the email authentication on right way and then I successfully to signUp.
