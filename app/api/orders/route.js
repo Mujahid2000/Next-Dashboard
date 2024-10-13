@@ -10,17 +10,13 @@ export async function GET(request) {
   try {
     let query = supabase.from('order').select('*'); // Start with a basic query
 
-    // If email is provided, filter orders by that email
     if (email) {
       query = query.eq('email', email);
     }
-
     const { data, error } = await query;
-
     if (error) {
       return NextResponse.json({ message: error.message }, { status: 400 });
     }
-
     return NextResponse.json({ orders: data }, { status: 200 });
   } catch (error) {
     return NextResponse.json({ message: 'Server error', error: error.message }, { status: 500 });
@@ -30,10 +26,10 @@ export async function GET(request) {
 // Handle POST requests (insert new orders)
 export async function POST(request) {
   try {
-    const body = await request.json(); // Extract the body from the request
+    const body = await request.json(); 
     const { productName, priceGroup, quantity, email } = body; // Get data from the request body
 
-    // Insert the order into the database using Supabase
+    // Insert the order data into the database using Supabase
     const { data, error } = await supabase
       .from('order')
       .insert([{ productName, priceGroup, quantity, email }]);
@@ -48,21 +44,18 @@ export async function POST(request) {
   }
 }
 
-
+//order data delete method by using ID.
 export async function DELETE(request) {
   try {
-    const { id } = await request.json(); // Extract the ID from the request body
-
-    // Delete the order from the database using Supabase
+    const { id } = await request.json(); 
     const { data, error } = await supabase
       .from('order')
       .delete()
-      .eq('id', id); // Ensure the order ID matches
+      .eq('id', id); // order ID match
 
     if (error) {
       return NextResponse.json({ message: error.message }, { status: 400 });
     }
-
     return NextResponse.json({ message: 'Order deleted successfully', data }, { status: 200 });
   } catch (error) {
     return NextResponse.json({ message: 'Server error', error: error.message }, { status: 500 });
