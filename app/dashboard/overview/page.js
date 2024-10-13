@@ -165,67 +165,68 @@ const Page = () => {
       </div>
 
       <h1 className="text-2xl font-bold mb-4 text-white py-6 text-center">Order List</h1>
-      <div className="max-w-[21.4rem] scroll-m-1 md:w-full  overflow-x-auto">
-        <table className="max-w-[21rem] scroll-m-1 md:w-full bg-white border border-gray-300 shadow-md rounded-lg">
-          <thead className="bg-gray-800 text-white">
-            <tr>
-              <th className="px-6 py-3 text-left text-sm font-medium">Product Name</th>
-              <th className="px-6 py-3 text-left text-sm font-medium">Group</th>
-              <th className="px-6 py-3 text-left text-sm font-medium">Quantity</th>
-              <th className="px-6 py-3 text-left text-sm font-medium">Actions</th>
-            </tr>
-          </thead>
-          <tbody>
-            {orders.length === 0 ? (
-              <tr>
-                <td colSpan="4" className="px-6 py-4 text-center text-gray-500">No orders found</td>
-              </tr>
-            ) : (
-              orders.map((order, index) => (
-                <tr key={order.id} className={`border-t hover:bg-gray-100 ${index % 2 === 0 ? 'bg-gray-50' : 'bg-white'}`}>
-                  <td className="px-6 py-4 text-gray-700">{order.productName}</td>
-                  <td className="px-6 py-4 text-gray-700">{order.priceGroup}</td>
-                  <td className="px-6 py-4 text-gray-700">
-                    {editingOrderId === order.id ? (
-                      <input
-                        type="number"
-                        value={editedQuantity[order.id] || ''}
-                        onChange={(e) => handleInputChange(order.id, e.target.value)}
-                        className="border px-2 py-1 w-16"
-                      />
-                    ) : (
-                      order.quantity
-                    )}
-                  </td>
-                  <td className="px-6 py-4 flex space-x-5">
-                    {/* Edit Button */}
-                    {editingOrderId === order.id ? (
-                      <button onClick={() => saveEdit(order.id)} className="text-green-600 hover:text-green-800">
-                        Save
-                      </button>
-                    ) : (
-                      <button
-                        onClick={() => handleEdit(order.id)}
-                        className="text-blue-600 hover:text-blue-800"
-                      >
-                        <PencilIcon className="h-5 w-5" />
-                      </button>
-                    )}
+      <div className="w-[21.4rem] lg:w-full overflow-x-auto scroll-m-1">
+  <table className="w-full bg-white border border-gray-300 shadow-md rounded-lg">
+    <thead className="bg-gray-800 text-white">
+      <tr>
+        <th className="px-6 py-3 text-left text-sm font-medium">Product Name</th>
+        <th className="px-6 py-3 text-left text-sm font-medium">Group</th>
+        <th className="px-6 py-3 text-left text-sm font-medium">Quantity</th>
+        <th className="px-6 py-3 text-left text-sm font-medium">Actions</th>
+      </tr>
+    </thead>
+    <tbody>
+      {orders.length === 0 ? (
+        <tr>
+          <td colSpan="4" className="px-6 py-4 text-center text-gray-500">No orders found</td>
+        </tr>
+      ) : (
+        orders.map((order, index) => (
+          <tr key={order.id} className={`border-t hover:bg-gray-100 ${index % 2 === 0 ? 'bg-gray-50' : 'bg-white'}`}>
+            <td className="px-6 py-4 text-gray-700">{order.productName}</td>
+            <td className="px-6 py-4 text-gray-700">{order.priceGroup}</td>
+            <td className="px-6 py-4 text-gray-700">
+              {editingOrderId === order.id ? (
+                <input
+                  type="number"
+                  value={editedQuantity[order.id] || ''}
+                  onChange={(e) => handleInputChange(order.id, e.target.value)}
+                  className="border px-2 py-1 w-16"
+                />
+              ) : (
+                order.quantity
+              )}
+            </td>
+            <td className="px-6 py-4 flex space-x-5">
+              {/* Edit Button */}
+              {editingOrderId === order.id ? (
+                <button onClick={() => saveEdit(order.id)} className="text-green-600 hover:text-green-800">
+                  Save
+                </button>
+              ) : (
+                <button
+                  onClick={() => handleEdit(order.id)}
+                  className="text-blue-600 hover:text-blue-800"
+                >
+                  <PencilIcon className="h-5 w-5" />
+                </button>
+              )}
 
-                    {/* Delete Button */}
-                    <button
-                      onClick={() => handleDelete(order.id)}
-                      className="text-red-600 hover:text-red-800"
-                    >
-                      <TrashIcon className="h-5 w-5" />
-                    </button>
-                  </td>
-                </tr>
-              ))
-            )}
-          </tbody>
-        </table>
-      </div>
+              {/* Delete Button */}
+              <button
+                onClick={() => handleDelete(order.id)}
+                className="text-red-600 hover:text-red-800"
+              >
+                <TrashIcon className="h-5 w-5" />
+              </button>
+            </td>
+          </tr>
+        ))
+      )}
+    </tbody>
+  </table>
+</div>
+
     </div>
   );
 };
