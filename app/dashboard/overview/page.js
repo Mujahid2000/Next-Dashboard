@@ -112,7 +112,7 @@ const Page = () => {
         {/* Line Chart */}
         <div className="shadow-lg p-4 rounded-lg">
           <h2 className="text-lg font-semibold mb-4">Sales Over Time (Line Chart)</h2>
-          <ResponsiveContainer width={300} height={300}>
+          <ResponsiveContainer width={250} height={250}>
             <LineChart data={data} margin={{ top: 5, right: 30, left: 20, bottom: 5 }}>
               <CartesianGrid strokeDasharray="3 3" />
               <XAxis dataKey="name" />
@@ -128,7 +128,7 @@ const Page = () => {
         {/* Bar Chart */}
         <div className="shadow-lg p-4 rounded-lg">
           <h2 className="text-lg font-semibold mb-4">Monthly Revenue (Bar Chart)</h2>
-          <ResponsiveContainer width={300} height={300}>
+          <ResponsiveContainer width={250} height={250}>
             <BarChart data={data} margin={{ top: 5, right: 30, left: 20, bottom: 5 }}>
               <CartesianGrid strokeDasharray="3 3" />
               <XAxis dataKey="name" />
@@ -146,7 +146,7 @@ const Page = () => {
           orders.length > 0 ? 
           (<div className="shadow-lg p-4 rounded-lg">
           <h2 className="text-lg font-semibold mb-4">Monthly Orders (Pie Chart)</h2>
-          <ResponsiveContainer width={300} height={300}>
+          <ResponsiveContainer width={250} height={250}>
             <PieChart>
               <Pie data={pieData} cx="50%" cy="50%" labelLine={false} outerRadius={100} fill="#8884d8" dataKey="value">
                 {pieData.map((entry, index) => (
