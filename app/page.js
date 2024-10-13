@@ -6,9 +6,12 @@ import { useAuth } from './provider/AuthContext';
 
 const Page = () => {
   const router = useRouter();
-  const { signIn } = useAuth(); 
+  const {user, signIn } = useAuth(); 
   const [loading, setLoading] = useState(false);
   const [errorMessage, setErrorMessage] = useState(null);
+  
+
+
 
   const handleLogin = async (e) => {
     e.preventDefault();
@@ -31,6 +34,11 @@ const Page = () => {
   
     setLoading(false);
   };
+
+  if(user){
+    router.push('/dashboard/overview');
+    return null;
+  }
   
 
   return (
