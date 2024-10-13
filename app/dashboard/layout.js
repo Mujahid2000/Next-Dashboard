@@ -63,16 +63,16 @@ const Page = ({ children }) => {
     <PrivateRoute>
   <div className="flex flex-col h-screen">
     
-    <header className="bg-[#2E2E48] h-20 fixed w-full z-50 flex items-center justify-between px-4 md:px-8 shadow-md">
-      <div className="flex items-center space-x-2">
+    <header className="bg-[#2E2E48] h-20 fixed w-full z-50 flex items-center justify-between px-10 md:px-8 shadow-md">
+      <div className="flex items-center">
         <img
-          className="w-9 h-9"
+          className="w-5 md:w-9 h-5 md:h-9"
           src="https://i.ibb.co/bzwmrds/Group-302.png"
           alt="logo"
         />
-        <h1 className="text-xl text-white">Dashboard</h1>
+        <h1 className="text-base md:text-xl text-white">Dashboard</h1>
       </div>
-      <p className="text-white">{userData?.name}</p>
+      <p className="text-white text-sm md:text-base">{userData?.name}</p>
 
       <button
         className="text-white 2xl:hidden focus:outline-none"

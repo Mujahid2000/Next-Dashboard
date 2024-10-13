@@ -106,13 +106,13 @@ const Page = () => {
   };
 
   return (
-    <div className="p-6">
+    <div className="p-0 md:p-6">
       <h1 className="text-3xl font-bold mb-6">Dashboard</h1>
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-1 xl:grid-cols-2 2xl:grid-cols-3  gap-6">
         {/* Line Chart */}
         <div className="shadow-lg p-4 rounded-lg">
           <h2 className="text-lg font-semibold mb-4">Sales Over Time (Line Chart)</h2>
-          <ResponsiveContainer width={250} height={250}>
+          <ResponsiveContainer width={300} height={300}>
             <LineChart data={data} margin={{ top: 5, right: 30, left: 20, bottom: 5 }}>
               <CartesianGrid strokeDasharray="3 3" />
               <XAxis dataKey="name" />
@@ -128,7 +128,7 @@ const Page = () => {
         {/* Bar Chart */}
         <div className="shadow-lg p-4 rounded-lg">
           <h2 className="text-lg font-semibold mb-4">Monthly Revenue (Bar Chart)</h2>
-          <ResponsiveContainer width={250} height={250}>
+          <ResponsiveContainer width={300} height={300}>
             <BarChart data={data} margin={{ top: 5, right: 30, left: 20, bottom: 5 }}>
               <CartesianGrid strokeDasharray="3 3" />
               <XAxis dataKey="name" />
@@ -146,7 +146,7 @@ const Page = () => {
           orders.length > 0 ? 
           (<div className="shadow-lg p-4 rounded-lg">
           <h2 className="text-lg font-semibold mb-4">Monthly Orders (Pie Chart)</h2>
-          <ResponsiveContainer width={250} height={250}>
+          <ResponsiveContainer width={300} height={300}>
             <PieChart>
               <Pie data={pieData} cx="50%" cy="50%" labelLine={false} outerRadius={100} fill="#8884d8" dataKey="value">
                 {pieData.map((entry, index) => (
@@ -165,8 +165,8 @@ const Page = () => {
       </div>
 
       <h1 className="text-2xl font-bold mb-4 text-white py-6 text-center">Order List</h1>
-      <div className="w-96 scroll-m-1 md:w-full  overflow-x-auto">
-        <table className="w-full bg-white border border-gray-300 shadow-md rounded-lg">
+      <div className="max-w-[21.5rem] scroll-m-1 md:w-full  overflow-x-auto">
+        <table className="max-w-[21rem] scroll-m-1 md:w-full bg-white border border-gray-300 shadow-md rounded-lg">
           <thead className="bg-gray-800 text-white">
             <tr>
               <th className="px-6 py-3 text-left text-sm font-medium">Product Name</th>
