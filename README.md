@@ -37,6 +37,7 @@ You should now see the login page.
 7. Sign In or Sign Up
 When you visit the root URL (/), you will be directed to the Sign In page.
 If you don't have an account, click the Sign Up link at the bottom of the Sign In form to register a new account.
+Note: I didn't implement any social login like google, facebook.
 
 8. Access the Dashboard
 After successfully signing in, you will be redirected to the Dashboard.
