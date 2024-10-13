@@ -165,8 +165,8 @@ const Page = () => {
       </div>
 
       <h1 className="text-2xl font-bold mb-4 text-white py-6 text-center">Order List</h1>
-      <div className="overflow-x-auto">
-        <table className="min-w-full bg-white border border-gray-300 shadow-md rounded-lg">
+      <div className="w-96 scroll-m-1 md:w-full  overflow-x-auto">
+        <table className="w-full bg-white border border-gray-300 shadow-md rounded-lg">
           <thead className="bg-gray-800 text-white">
             <tr>
               <th className="px-6 py-3 text-left text-sm font-medium">Product Name</th>
