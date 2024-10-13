@@ -15,24 +15,29 @@ cd Next-Dashboard
 Run the following command to install the necessary dependencies:
 
 npm install
+
 4. Open the Project in VS Code
 Once the installation is complete, open the project in Visual Studio Code by typing:
 
 code .
 This will launch VS Code with the current project folder.
+
 5. Start the Development Server
 To start the local development server, run the following command:
 
 npm run dev
 This will start the server on localhost:3000.
+
 6. Open the Application in Browser
 Open your browser and navigate to:
 
 http://localhost:3000
 You should now see the login page.
+
 7. Sign In or Sign Up
 When you visit the root URL (/), you will be directed to the Sign In page.
 If you don't have an account, click the Sign Up link at the bottom of the Sign In form to register a new account.
+
 8. Access the Dashboard
 After successfully signing in, you will be redirected to the Dashboard.
 
