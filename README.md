@@ -9,7 +9,7 @@ git clone https://github.com/Mujahid2000/Next-Dashboard.git
 2. Navigate to the Project Directory
 After cloning, move into the project folder using the terminal:
 
-cd <project-folder>
+cd Next-Dashboard
 
 3. Install Dependencies
 Run the following command to install the necessary dependencies:
